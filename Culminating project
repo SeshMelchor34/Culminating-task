@@ -14,11 +14,13 @@ class culminatingtask {
     JPanel panel1 = new JPanel();
     panel1.setLayout(new FlowLayout());
 
-    JButton button1 = new JButton("Button 1");
-    JLabel label1 = new JLabel("Label 1");
+    JButton button1 = new JButton("");
+    JLabel label1 = new JLabel("Button 1");
 
-    JButton button2 = new JButton("This is button 2");
-    JLabel label2 = new JLabel("Label 2");
+    button1.setPreferredSize(new Dimension(50, 50));
+
+    JButton button2 = new JButton("");
+    JLabel label2 = new JLabel("This is button 2");
 
     // Resizing button2 and setting a rollover icon
     button2.setPreferredSize(new Dimension(50, 50));
