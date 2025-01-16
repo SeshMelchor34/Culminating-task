@@ -4,7 +4,7 @@ import java.awt.event.*;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class ThreePanelsApp {
+public class CulminatingTask {
     public static void main(String[] args) {
         // Creating the main frame
         JFrame frame = new JFrame("Three Panels Application");
@@ -23,7 +23,7 @@ public class ThreePanelsApp {
         
         // Resizing button2 and setting a rollover icon
         button2.setPreferredSize(new Dimension(50, 50));
-        ImageIcon icon = new ImageIcon("path/to/your/image.jpg");  // Replace with the path to your image
+        ImageIcon icon = new ImageIcon(""); 
         button2.setRolloverIcon(icon);
         
         // Add action listener to button2
