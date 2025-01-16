@@ -1,103 +1,120 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class CulminatingTask {
-    public static void main(String[] args) {
-        // Creating the main frame
-        JFrame frame = new JFrame("Three Panels Application");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 400);
-        
-        // Creating the first panel with two buttons
-        JPanel panel1 = new JPanel();
-        panel1.setLayout(new FlowLayout());
-        
-        JButton button1 = new JButton("Button 1");
-        JLabel label1 = new JLabel("Label 1");
-        
-        JButton button2 = new JButton("Button 2");
-        JLabel label2 = new JLabel("Label 2");
-        
-        // Resizing button2 and setting a rollover icon
-        button2.setPreferredSize(new Dimension(50, 50));
-        ImageIcon icon = new ImageIcon(""); 
-        button2.setRolloverIcon(icon);
-        
-        // Add action listener to button2
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Button 2 selected!");
-            }
-        });
-        
-        panel1.add(button1);
-        panel1.add(label1);
-        panel1.add(button2);
-        panel1.add(label2);
+class culminatingtask {
+  public static void threePanelApp() {
+    // Creating the main frame
+    JFrame frame = new JFrame("Three Panels Application");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setSize(600, 400);
 
-        // Creating the second panel with checkboxes
-        JPanel panel2 = new JPanel();
-        panel2.setLayout(new FlowLayout());
-        
-        JCheckBox option1 = new JCheckBox("Option 1 - $10");
-        JCheckBox option2 = new JCheckBox("Option 2 - $20");
-        JCheckBox option3 = new JCheckBox("Option 3 - $30");
-        
-        JButton calculateButton2 = new JButton("Calculate Total");
-        calculateButton2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                double total = 0;
-                if (option1.isSelected()) total += 10;
-                if (option2.isSelected()) total += 20;
-                if (option3.isSelected()) total += 30;
-                
-                double tax = total * 0.15;  // 15% tax
-                double totalPrice = total + 15 + tax;  // Adding $15 flat fee
-                
-                JOptionPane.showMessageDialog(frame, "Total: $" + totalPrice);
-            }
-        });
-        
-        panel2.add(option1);
-        panel2.add(option2);
-        panel2.add(option3);
-        panel2.add(calculateButton2);
-        
-        // Creating the third panel with a single checkbox
-        JPanel panel3 = new JPanel();
-        panel3.setLayout(new FlowLayout());
-        
-        JCheckBox option4 = new JCheckBox("Option 4 - $50");
-        
-        JButton calculateButton3 = new JButton("Calculate Total");
-        calculateButton3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                double total = 0;
-                if (option4.isSelected()) total += 50;
-                
-                double tax = total * 0.15;  // 15% tax
-                double totalPrice = total + 15 + tax;  // Adding $15 flat fee
-                
-                JOptionPane.showMessageDialog(frame, "Total: $" + totalPrice);
-            }
-        });
-        
-        panel3.add(option4);
-        panel3.add(calculateButton3);
+    // Creating the first panel with two buttons
+    JPanel panel1 = new JPanel();
+    panel1.setLayout(new FlowLayout());
 
-        // Adding all panels to the frame
-        frame.setLayout(new GridLayout(1, 3));
-        frame.add(panel1);
-        frame.add(panel2);
-        frame.add(panel3);
+    JButton button1 = new JButton("Button 1");
+    JLabel label1 = new JLabel("Label 1");
 
-        // Set frame visible
-        frame.setVisible(true);
-    }
+    JButton button2 = new JButton("This is button 2");
+    JLabel label2 = new JLabel("Label 2");
+
+    // Resizing button2 and setting a rollover icon
+    button2.setPreferredSize(new Dimension(50, 50));
+    ImageIcon icon = new ImageIcon("C:\\Users\\melchos730\\IdeaProjects\\CulminatingProject\\images\\leaf.png");
+    button2.setRolloverIcon(icon);
+
+    // Add action listener to button2
+    button1.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        JOptionPane.showMessageDialog(frame, "Button 1 selected!");
+      }
+    });
+
+    // Add action listener to button2
+    button2.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        JOptionPane.showMessageDialog(frame, "Button 2 selected!");
+      }
+    });
+
+    panel1.add(button1);
+    panel1.add(label1);
+    panel1.add(button2);
+    panel1.add(label2);
+
+    // Creating the second panel with checkboxes
+    JPanel panel2 = new JPanel();
+    panel2.setLayout(new FlowLayout());
+
+    JCheckBox option1 = new JCheckBox("Option 1 - $10");
+    JCheckBox option2 = new JCheckBox("Option 2 - $20");
+    JCheckBox option3 = new JCheckBox("Option 3 - $30");
+
+
+    JButton calculateButton2 = new JButton("Calculate Total");
+    calculateButton2.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        double total = 0;
+        if (option1.isSelected()) total += 10;
+        if (option2.isSelected()) total += 20;
+        if (option3.isSelected()) total += 30;
+
+        double tax = total * 0.15;  // 15% tax
+        double totalPrice = total + 15 + tax;  // Adding $15 flat fee
+
+        JOptionPane.showMessageDialog(frame, "Total: $" + totalPrice);
+      }
+    });
+
+    panel2.add(option1);
+    panel2.add(option2);
+    panel2.add(option3);
+    panel2.add(calculateButton2);
+
+    // Creating the third panel with a single checkbox
+    JPanel panel3 = new JPanel();
+    panel3.setLayout(new FlowLayout());
+
+    JRadioButton option4 = new JRadioButton("Option 4 - $50");
+
+    JButton calculateButton3 = new JButton("Calculate Total");
+    calculateButton3.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        double total = 0;
+        if (option4.isSelected()) total += 50;
+
+        double tax = total * 0.15;  // 15% tax
+        double totalPrice = total + 15 + tax;  // Adding $15 flat fee
+
+        JOptionPane.showMessageDialog(frame, "Total: $" + totalPrice);
+      }
+    });
+
+    panel3.add(option4);
+    panel3.add(calculateButton3);
+
+    // Adding all panels to the frame
+    frame.setLayout(new GridLayout(1, 3));
+    frame.add(panel1);
+    frame.add(panel2);
+    frame.add(panel3);
+
+    // Set frame visible
+    frame.setVisible(true);
+  }
+
+
+  public static void main(String[] args) {
+    javax.swing.SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+       threePanelApp ();
+      }
+    });
+  }
 }
