@@ -24,8 +24,8 @@ class culminatingtask {
 
     // Resizing button2 and setting a rollover icon
     button2.setPreferredSize(new Dimension(50, 50));
-    ImageIcon icon = new ImageIcon("C:\\Users\\melchos730\\IdeaProjects\\CulminatingProject\\images\\leaf.png");
-    button2.setRolloverIcon(icon);
+    ImageIcon button2Icon = new ImageIcon("C:\\Users\\melchos730\\IdeaProjects\\CulminatingProject\\images\\leaf.png");
+    button2.setRolloverIcon(button2Icon);
 
     // Add action listener to button2
     button1.addActionListener(new ActionListener() {
@@ -52,9 +52,21 @@ class culminatingtask {
     JPanel panel2 = new JPanel();
     panel2.setLayout(new FlowLayout());
 
-    JCheckBox option1 = new JCheckBox("Option 1 - $10");
-    JCheckBox option2 = new JCheckBox("Option 2 - $20");
-    JCheckBox option3 = new JCheckBox("Option 3 - $30");
+
+    Icon alienwareAuroraIcon = new ImageIcon ("C:\\Users\\melchos730\\IdeaProjects\\CulminatingProject\\images\\alienwareAurora.jpeg");
+    Image alienwareAuroraImg = ((ImageIcon) alienwareAuroraIcon).getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
+    alienwareAuroraIcon =new ImageIcon(alienwareAuroraImg);
+    JCheckBox alienwareAurora = new JCheckBox("Alienware Aurora R15 - $3,306",alienwareAuroraIcon );
+
+    Icon microsoftSurfaceIcon = new ImageIcon ("C:\\Users\\melchos730\\IdeaProjects\\CulminatingProject\\images\\microsoftSurface.jpeg");
+    Image microsoftSurfaceImg = ((ImageIcon) microsoftSurfaceIcon).getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
+    microsoftSurfaceIcon =new ImageIcon(microsoftSurfaceImg);
+    JCheckBox microsoftSurface9 = new JCheckBox("microsoftSurface9 - $2399.99",microsoftSurfaceIcon);
+
+    Icon dellXps15Icon = new ImageIcon ("C:\\Users\\melchos730\\IdeaProjects\\CulminatingProject\\images\\s-l1200.jpeg");
+    Image dellXps15Img = ((ImageIcon) dellXps15Icon).getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
+    dellXps15Icon =new ImageIcon(dellXps15Img);
+    JCheckBox dellXps15 = new JCheckBox("Dell Xps 15 - $1749.99",dellXps15Icon);
 
 
     JButton calculateButton2 = new JButton("Calculate Total");
@@ -62,9 +74,10 @@ class culminatingtask {
       @Override
       public void actionPerformed(ActionEvent e) {
         double total = 0;
-        if (option1.isSelected()) total += 10;
-        if (option2.isSelected()) total += 20;
-        if (option3.isSelected()) total += 30;
+        if (alienwareAurora.isSelected())total += 3306;
+        if (alienwareAurora.isSelected())alienwareAurora.setBorder(BorderFactory.createLineBorder(Color.green));
+        if (microsoftSurface9.isSelected()) total += 2399.99;
+        if (dellXps15.isSelected()) total += 1749.99;
 
         double tax = total * 0.15;  // 15% tax
         double totalPrice = total + 15 + tax;  // Adding $15 flat fee
@@ -73,9 +86,9 @@ class culminatingtask {
       }
     });
 
-    panel2.add(option1);
-    panel2.add(option2);
-    panel2.add(option3);
+    panel2.add(alienwareAurora);
+    panel2.add(microsoftSurface9);
+    panel2.add(dellXps15);
     panel2.add(calculateButton2);
 
     // Creating the third panel with a single checkbox
