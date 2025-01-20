@@ -75,7 +75,7 @@ class culminatingtask {
       public void actionPerformed(ActionEvent e) {
         double total = 0;
         if (alienwareAurora.isSelected())total += 3306;
-        if (alienwareAurora.isSelected())alienwareAurora.setBorder(BorderFactory.createLineBorder(Color.green));
+        if (alienwareAurora.isSelected())alienwareAurora.setBorder(BorderFactory.createLineBorder(Color.red));
         if (microsoftSurface9.isSelected()) total += 2399.99;
         if (dellXps15.isSelected()) total += 1749.99;
 
@@ -122,6 +122,7 @@ class culminatingtask {
 
     // Set frame visible
     frame.setVisible(true);
+    frame.setSize(1000,500);
   }
 
 
